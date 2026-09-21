@@ -41,6 +41,7 @@ nav ul {
     list-style: none;
     display: flex;
     gap: 20px;
+    justify-content: right;
 }
 
 nav a {
@@ -452,3 +453,179 @@ footer {
         font-size: 18px;
     }
 }
+
+/* =========================
+   REGISTER FORM
+========================= */
+
+.form-container {
+    min-height: calc(100vh - 100px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.form-card {
+    width: 100%;
+    max-width: 500px;
+    background: white;
+    padding: 35px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.form-card h2 {
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.form-subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 25px;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 7px;
+    font-weight: bold;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+    box-sizing: border-box;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #2563eb;
+}
+
+.password-container {
+    display: flex;
+    gap: 8px;
+}
+
+.password-container input {
+    flex: 1;
+}
+
+.password-container button {
+    padding: 0 15px;
+    border: none;
+    border-radius: 8px;
+    background: #e5e7eb;
+    cursor: pointer;
+}
+
+.password-container button:hover {
+    background: #d1d5db;
+}
+
+.error {
+    display: block;
+    color: #dc2626;
+    font-size: 13px;
+    margin-top: 5px;
+    min-height: 16px;
+}
+
+.register-btn {
+    width: 100%;
+    padding: 13px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 8px;
+    background: #2563eb;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.register-btn:hover {
+    background: #1d4ed8;
+}
+
+/* Success/Error message */
+
+#form-message {
+    display: none;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+
+#form-message.success {
+    display: block;
+    background: #dcfce7;
+    color: #166534;
+}
+
+#form-message.error-message {
+    display: block;
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+/* =========================
+   CART CONTROLS
+========================= */
+
+.cart-product-info p {
+    color: #666;
+}
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.quantity-btn {
+    width: 32px;
+    height: 32px;
+    border: none;
+    border-radius: 6px;
+    background: #2563eb;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.quantity-btn:hover {
+    background: #1d4ed8;
+}
+
+.quantity-number {
+    min-width: 25px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.remove-cart-button {
+    border: none;
+    background: #dc2626;
+    color: white;
+    padding: 7px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.remove-cart-button:hover {
+    background: #b91c1c;
+}
+

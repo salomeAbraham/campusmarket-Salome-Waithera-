@@ -76,7 +76,10 @@ const cartItems = document.getElementById("cartItems");
 const cartTotal = document.getElementById("cartTotal");
 
 
-// Add product to cart
+// =====================================
+// ADD PRODUCT TO CART
+// =====================================
+
 function addToCart(product) {
 
     const name = product.dataset.name;
@@ -105,7 +108,10 @@ function addToCart(product) {
 }
 
 
-// Update the cart display
+// =====================================
+// UPDATE CART DISPLAY
+// =====================================
+
 function updateCart() {
 
     cartItems.innerHTML = "";
@@ -125,26 +131,48 @@ function updateCart() {
         totalQuantity += item.quantity;
 
 
+        // Create cart item
         const cartItem = document.createElement("div");
 
         cartItem.classList.add("cart-item");
 
+
         cartItem.innerHTML = `
-            <div>
+            <div class="cart-product-info">
+
                 <h3>${item.name}</h3>
-                <p>KES ${item.price.toLocaleString()} each</p>
+
+                <p>
+                    KES ${item.price.toLocaleString()} each
+                </p>
+
             </div>
 
+
             <div class="cart-quantity">
-                <label>
-                    Quantity:
-                    <input
-                        type="number"
-                        min="1"
-                        value="${item.quantity}"
+
+                <div class="quantity-controls">
+
+                    <button
+                        class="quantity-btn decrease-btn"
                         data-name="${item.name}"
                     >
-                </label>
+                        −
+                    </button>
+
+                    <span class="quantity-number">
+                        ${item.quantity}
+                    </span>
+
+                    <button
+                        class="quantity-btn increase-btn"
+                        data-name="${item.name}"
+                    >
+                        +
+                    </button>
+
+                </div>
+
 
                 <p>
                     Subtotal:
@@ -152,14 +180,27 @@ function updateCart() {
                         KES ${itemTotal.toLocaleString()}
                     </strong>
                 </p>
+
+
+                <button
+                    class="remove-cart-button"
+                    data-name="${item.name}"
+                >
+                    Remove
+                </button>
+
             </div>
         `;
+
 
         cartItems.appendChild(cartItem);
     });
 
 
-    // If cart is empty
+    // =====================================
+    // EMPTY CART
+    // =====================================
+
     if (cart.length === 0) {
 
         cartItems.innerHTML =
@@ -167,24 +208,31 @@ function updateCart() {
     }
 
 
+    // =====================================
+    // UPDATE TOTALS
+    // =====================================
+
     cartTotal.textContent =
         `KES ${total.toLocaleString()}`;
 
     cartCount.textContent = totalQuantity;
 
 
-    // Add quantity event listeners
-    const quantityInputs =
-        document.querySelectorAll(".cart-quantity input");
+    // =====================================
+    // INCREASE QUANTITY
+    // =====================================
 
-    quantityInputs.forEach(function(input) {
+    const increaseButtons =
+        document.querySelectorAll(".increase-btn");
 
-        input.addEventListener("input", function() {
 
-            const productName = input.dataset.name;
+    increaseButtons.forEach(function(button) {
 
-            const newQuantity =
-                Number(input.value);
+        button.addEventListener("click", function() {
+
+            const productName =
+                button.dataset.name;
+
 
             const product =
                 cart.find(function(item) {
@@ -192,9 +240,9 @@ function updateCart() {
                 });
 
 
-            if (product && newQuantity > 0) {
+            if (product) {
 
-                product.quantity = newQuantity;
+                product.quantity++;
 
                 updateCart();
             }
@@ -202,10 +250,88 @@ function updateCart() {
         });
 
     });
+
+
+    // =====================================
+    // DECREASE QUANTITY
+    // =====================================
+
+    const decreaseButtons =
+        document.querySelectorAll(".decrease-btn");
+
+
+    decreaseButtons.forEach(function(button) {
+
+        button.addEventListener("click", function() {
+
+            const productName =
+                button.dataset.name;
+
+
+            const product =
+                cart.find(function(item) {
+                    return item.name === productName;
+                });
+
+
+            if (product) {
+
+                product.quantity--;
+
+
+                // Remove item when quantity reaches zero
+                if (product.quantity <= 0) {
+
+                    cart = cart.filter(function(item) {
+                        return item.name !== productName;
+                    });
+                }
+
+
+                updateCart();
+            }
+
+        });
+
+    });
+
+
+    // =====================================
+    // REMOVE PRODUCT
+    // =====================================
+
+    const removeButtons =
+        document.querySelectorAll(".remove-cart-button");
+
+
+    removeButtons.forEach(function(button) {
+
+        button.addEventListener("click", function() {
+
+            const productName =
+                button.dataset.name;
+
+
+            cart = cart.filter(function(item) {
+
+                return item.name !== productName;
+
+            });
+
+
+            updateCart();
+
+        });
+
+    });
+
 }
 
 
-// Add click events to all Add to Cart buttons
+// =====================================
+// ADD TO CART BUTTONS
+// =====================================
+
 const addCartButtons =
     document.querySelectorAll(".add-cart-button");
 
