@@ -197,3 +197,258 @@ footer {
         gap: 8px;
     }
 }
+
+/* =========================
+   PRODUCT FILTERS
+========================= */
+
+.filters {
+    background-color: white;
+    padding: 25px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.filter-group label {
+    font-weight: bold;
+    color: #173f5f;
+}
+
+.filter-group input,
+.filter-group select {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+.filter-group input:focus,
+.filter-group select:focus {
+    outline: none;
+    border-color: #20639b;
+}
+
+
+/* =========================
+   NO RESULTS MESSAGE
+========================= */
+
+.no-results {
+    display: none;
+    text-align: center;
+    background-color: #fff3cd;
+    color: #856404;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+}
+
+
+/* =========================
+   QUANTITY BOX
+========================= */
+
+.quantity-box {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+}
+
+.quantity-box label {
+    font-weight: bold;
+}
+
+.quantity-box input {
+    width: 70px;
+    padding: 8px;
+    margin-left: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.quantity-box p {
+    margin-top: 12px;
+}
+
+.quantity-box strong {
+    color: #f28e2b;
+}
+
+
+/* =========================
+   RESPONSIVE FILTERS
+========================= */
+
+@media (max-width: 768px) {
+
+    .filters {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* =========================
+   CART BUTTON
+========================= */
+
+.cart-button {
+    border: none;
+    background-color: #f28e2b;
+    color: white;
+    padding: 10px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.cart-button:hover {
+    background-color: #d97706;
+}
+
+
+/* =========================
+   ADD TO CART BUTTON
+========================= */
+
+.add-cart-button {
+    /* width: 100%; */
+    margin-top: 20px;
+    padding: 12px;
+
+    border: none;
+    border-radius: 6px;
+
+    background-color: #173f5f;
+    color: white;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.add-cart-button:hover {
+    background-color: #20639b;
+}
+
+
+/* =========================
+   CART SECTION
+========================= */
+
+.cart-section {
+    background-color: #eef5fa;
+}
+
+.cart-section h2 {
+    margin-bottom: 25px;
+}
+
+
+/* =========================
+   CART ITEM
+========================= */
+
+.cart-item {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 15px;
+
+    border-radius: 10px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+}
+
+.cart-item h3 {
+    color: #173f5f;
+}
+
+.cart-quantity {
+    text-align: right;
+}
+
+.cart-quantity input {
+    width: 70px;
+    padding: 8px;
+
+    border: 1px solid #ccc;
+    border-radius: 5px;
+
+    margin-left: 5px;
+}
+
+.cart-quantity p {
+    margin-top: 8px;
+}
+
+
+/* =========================
+   CART TOTAL
+========================= */
+
+.cart-total {
+    background-color: #173f5f;
+    color: white;
+
+    padding: 20px;
+
+    border-radius: 8px;
+
+    display: flex;
+    justify-content: space-between;
+
+    font-size: 20px;
+}
+
+
+/* =========================
+   EMPTY CART
+========================= */
+
+.empty-cart {
+    background-color: white;
+    padding: 25px;
+    text-align: center;
+
+    border-radius: 8px;
+
+    color: #666;
+}
+
+
+/* =========================
+   MOBILE CART
+========================= */
+
+@media (max-width: 768px) {
+
+    .cart-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .cart-quantity {
+        text-align: left;
+    }
+
+    .cart-total {
+        font-size: 18px;
+    }
+}
