@@ -1,5 +1,12 @@
 # CampusMarket
 
+Name: Waithera Salome Wanjiru
+
+Registration Number: CIT-227-017/2026
+
+Live site:https://campusmarket-salome-waithera.vercel.app/
+
+
 CampusMarket is a simple campus marketplace website with product filtering and an interactive shopping cart.
 
 ## JavaScript Concepts Used
