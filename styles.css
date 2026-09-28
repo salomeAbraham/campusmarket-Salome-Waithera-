@@ -629,3 +629,325 @@ footer {
     background: #b91c1c;
 }
 
+/* =====================================
+   GALLERY
+===================================== */
+
+.gallery-section {
+    background-color: #eef5fa;
+    padding: 60px 0;
+}
+
+.gallery-description {
+    text-align: center;
+    color: #666;
+    margin-bottom: 25px;
+}
+
+.gallery {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.gallery-display {
+    width: 600px;
+    min-height: 420px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 14px;
+    text-align: center;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-image {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.gallery-title {
+    margin-top: 15px;
+    color: #173f5f;
+}
+
+.gallery-category {
+    color: #666;
+}
+
+.gallery-button {
+    width: 45px;
+    height: 45px;
+    border: none;
+    border-radius: 50%;
+
+    background-color: #173f5f;
+    color: white;
+
+    font-size: 24px;
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        background-color 0.2s ease;
+}
+
+.gallery-button:hover {
+    background-color: #20639b;
+    transform: scale(1.08);
+}
+
+.gallery-counter {
+    text-align: center;
+    margin-top: 15px;
+    color: #666;
+}
+
+.gallery-empty {
+    padding: 150px 20px;
+    color: #777;
+}
+
+
+/* =====================================
+   REGISTRATION FORM
+===================================== */
+
+.registration-section {
+    padding: 70px 0;
+}
+
+.registration-card {
+    max-width: 600px;
+    margin: auto;
+    background-color: white;
+    padding: 40px;
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+.registration-card h2 {
+    text-align: center;
+    color: #173f5f;
+    margin-bottom: 10px;
+}
+
+.form-intro {
+    text-align: center;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 22px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+
+    font-weight: bold;
+    color: #173f5f;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 13px;
+
+    border: 1px solid #ccd4dc;
+    border-radius: 7px;
+
+    font-size: 16px;
+
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #20639b;
+
+    box-shadow:
+        0 0 0 3px rgba(32, 99, 155, 0.12);
+}
+
+
+/* Password */
+
+.password-wrapper {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.password-wrapper input {
+    padding-right: 75px;
+}
+
+.password-toggle {
+    position: absolute;
+    right: 10px;
+
+    border: none;
+    background: transparent;
+
+    color: #20639b;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+
+/* =====================================
+   VALIDATION ERRORS
+===================================== */
+
+.input-error {
+    border-color: #d9534f !important;
+    background-color: #fff8f8;
+}
+
+.error-message {
+    display: block;
+
+    max-height: 0;
+    opacity: 0;
+
+    overflow: hidden;
+
+    color: #c0392b;
+
+    transform: translateY(-5px);
+
+    transition:
+        max-height 0.3s ease,
+        opacity 0.3s ease,
+        transform 0.3s ease;
+
+    margin-top: 0;
+}
+
+.error-message.show {
+    max-height: 60px;
+    opacity: 1;
+
+    transform: translateY(0);
+
+    margin-top: 7px;
+}
+
+
+/* =====================================
+   SUCCESS ANIMATION
+===================================== */
+
+.success-message {
+    display: none;
+
+    margin-top: 20px;
+    padding: 15px;
+
+    border-radius: 8px;
+
+    background-color: #e8f8ef;
+    color: #18794e;
+
+    text-align: center;
+    font-weight: bold;
+}
+
+.success-message.show {
+    display: block;
+
+    animation:
+        successPop 0.6s ease forwards;
+}
+
+
+@keyframes successPop {
+
+    0% {
+        opacity: 0;
+        transform: scale(0.85);
+    }
+
+    60% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+/* =====================================
+   REGISTER BUTTON
+===================================== */
+
+.register-button {
+    width: 100%;
+
+    padding: 14px;
+
+    border: none;
+    border-radius: 7px;
+
+    background-color: #f28e2b;
+    color: white;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.25s ease,
+        transform 0.2s ease;
+}
+
+.register-button:hover {
+    background-color: #d97706;
+    transform: translateY(-2px);
+}
+
+
+/* =====================================
+   RESPONSIVE GALLERY
+===================================== */
+
+@media (max-width: 768px) {
+
+    .gallery {
+        gap: 8px;
+    }
+
+    .gallery-display {
+        width: calc(100% - 90px);
+        min-height: 300px;
+    }
+
+    .gallery-image {
+        height: 220px;
+    }
+
+    .gallery-button {
+        width: 38px;
+        height: 38px;
+        font-size: 20px;
+    }
+
+    .registration-card {
+        width: 94%;
+        padding: 25px;
+    }
+}

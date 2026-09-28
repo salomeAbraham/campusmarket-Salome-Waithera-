@@ -65,7 +65,7 @@
                     <option value="all">All Categories</option>
                     <option value="Stationery">Stationery</option>
                     <option value="Bags">Bags</option>
-                    <option value="Books">Books</option>
+                    <option value="Textbooks">Textbooks</option>
                     <option value="Electronics">Electronics</option>
 
                 </select>
@@ -134,12 +134,12 @@
     <article
         class="product-card"
         data-name="Programming Textbook"
-        data-category="Books"
+        data-category="Textbooks"
         data-price="1800"
     >
         <h3>Programming Textbook</h3>
 
-        <p class="category">Books</p>
+        <p class="category">Textbooks</p>
 
         <p class="price">KES 1,800</p>
 
@@ -228,6 +228,52 @@
 </div>
 
             </div>
+        <section class="gallery-section" aria-labelledby="gallery-title">
+
+    <div class="container">
+
+        <h2 id="gallery-title">CampusMarket Gallery</h2>
+
+        <p class="gallery-description">
+            Browse images of the products currently shown in the catalogue.
+        </p>
+
+        <div class="gallery">
+
+            <button
+                type="button"
+                id="previousImage"
+                class="gallery-button"
+                aria-label="Previous product image"
+            >
+                &#10094;
+            </button>
+
+            <div
+                id="galleryDisplay"
+                class="gallery-display"
+            ></div>
+
+            <button
+                type="button"
+                id="nextImage"
+                class="gallery-button"
+                aria-label="Next product image"
+            >
+                &#10095;
+            </button>
+
+        </div>
+
+        <p
+            id="galleryCounter"
+            class="gallery-counter"
+        >
+        </p>
+
+    </div>
+
+</section>
             <section class="cart-section" id="cartSection">
 
     <div class="container">
